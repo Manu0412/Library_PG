@@ -9,9 +9,6 @@
   <Folder Name="/Presenters/">
     <Project Path="Library.Api/Library.Api.csproj" />
   </Folder>
-  <Folder Name="/Scripts/">
-    <File Path="scripts/ef.cmd" />
-  </Folder>
   <Folder Name="/Test/">
     <Project Path="Library.Test/Library.Test.csproj" Id="5613dc61-1800-4577-b295-1380a915e3fa" />
   </Folder>
