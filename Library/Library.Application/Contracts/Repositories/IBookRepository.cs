@@ -8,8 +8,8 @@ namespace Library.Application.Contracts.Repositories
 {
     public interface IBookRepository
     {
-        Task<(List<Book> Items, int TotalCount)> GetAllAsync(PaginationRequest pagination);
+        Task<PaginationResponse<Book>> GetAllAsync(PaginationRequest pagination);
         Task<Book?> GetBookByIdAsync(int id);
-        Task<(List<Book> Items, int TotalCount)> GetByCategoryIdAsync(int categoryId, PaginationRequest pagination);
+        Task<PaginationResponse<Book>> GetByCategoryIdAsync(int categoryId, PaginationRequest pagination);
     }
 }

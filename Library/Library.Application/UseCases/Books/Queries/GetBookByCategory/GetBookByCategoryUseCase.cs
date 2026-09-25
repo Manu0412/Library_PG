@@ -19,9 +19,9 @@ namespace Library.Application.UseCases.Books.Queries.GetBookByCategory
 
         public async Task<PaginationResponse<BookListItemDto>> Handle(GetBookByCategoryQuery query)
         {
-            var (books, totalCount) = await _repository.GetByCategoryIdAsync(query.CategoryId, query.Pagination);
-            var items = books.Select(b => b.ToListItemDto()).ToList();
-            return PaginationResponse<BookListItemDto>.Create(items, totalCount, query.Pagination);
+            var result = await _repository.GetByCategoryIdAsync(query.CategoryId, query.Pagination);
+            var items = result.Items.Select(b => b.ToListItemDto()).ToList();
+            return PaginationResponse<BookListItemDto>.Create(items, result.TotalCount, query.Pagination);
         }
     }
 }
